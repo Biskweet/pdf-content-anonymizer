@@ -41,3 +41,6 @@ Il existe deux manière d'effectuer cette tâche dans le cadre du projet :
 - Le fichier de sortie après anonymisation est une image. Il sera possible de convertir l'image en PDF mais elle restera alors une image sur un PDF (cependant, avec une résolution suffisante, la seule fonctionnalité perdue serait la sélection de texte) ;
 - Il peut y avoir des erreurs dans l'interprétation du texte par `tesseract`. **Néanmoins, après quelques expérimentations, la retranscription semble être plus fidèle avec `tesseract` comparée à `PyPDF2`**.
 
+
+
+La piste à privilégier à mes yeux est l'utilisation de `tesseract`. Cet avis pourrait changer avec l'avancement du projet selon les difficultés rencontrées.

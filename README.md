@@ -28,7 +28,7 @@ Il existe deux manière d'effectuer cette tâche dans le cadre du projet :
 - **Ne fonctionne pas sur certains fichiers PDF pour des raisons obscures** ;
 - Certains PDF sont mal "lus" par les bibliothèques et leur texte est corrompu (t r o p  d ' e s p a c e s  ou pasassez ou a léatoi remn t).
 
-**2 :** de `tesseract` pour l'identification de chaque mot du document et sa position, puis anonymisation des données sensibles avec `opencv` en réécrivant au-dessus.
+**2 :** Utilsation de `tesseract` pour l'identification de chaque mot du document et sa position, puis anonymisation des données sensibles avec `opencv` en réécrivant au-dessus.
 
 ​    <u>**Avantages :**</u>
 

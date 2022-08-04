@@ -13,8 +13,8 @@
 
 body {
     font-family: "Open Sans", sans-serif;
-    background-color: #fffdfd;
-    color: #710d02;
+    background-color: #fffdfd;  /* Base pink */
+    color: #710d02;             /* Base red */
 }
 
 
@@ -29,7 +29,7 @@ body {
 
 
 /* UPLOAD FILES */
-#upload label {
+#uploader label {
     text-align: center;
     margin: auto;
     padding-top: 2em;
@@ -38,6 +38,7 @@ body {
     cursor: pointer;
     margin-left: 1em;
     margin-right: 1em;
+    user-select: none;
 }
 
 
@@ -72,8 +73,5 @@ input[type=submit] {
     border-radius: 1.2em;
     font-size: 1em;
     border: none;
-    background-color: #710d02;
-    color:#fffdfd;
     font-weight: bold;
-    cursor: pointer;
 }

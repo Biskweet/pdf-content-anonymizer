@@ -5,23 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PDF Anonymizer</title>
     <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <script type="text/javascript" src="../static/scripts/index.js"></script>
 </head>
 <body>
-    <div id="main">
-        <h1>PDF Anonymizer</h1>
-        <div id="upload">
-            <form action="">
+    <form action="/upload/" method="POST" enctype="multipart/form-data">
+        <div id="main">
+            <h1>PDF Anonymizer</h1>
+            <div id="uploader">
+                {{ form.csrf_token }}
+                {{ form.pdf }}
                 <label for="fileinput_single">Upload single file</label>
                 <label for="fileinput_mult">Upload multiple files</label>
                 <input id="fileinput_single" type="file" accept=".PDF" oninput="triggerFileInput(this)">
                 <input id="fileinput_mult" type="file" accept=".PDF" oninput="triggerFileInput(this)" webkitdirectory directory multiple>
-            </form>
+            </div>
         </div>
-    </div>
-    <div id="hidden">
-        <p id="uploadValidator"></p>
-        <input type="submit" value="Process file(s)">
-    </div>
+        <div id="hidden">
+            <p id="uploadValidator"></p>
+            <input type="submit" value="Process file(s)" disabled="false">
+        </div>
+    </form>
 </body>
 </html>

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+
+@keyframes appear {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #fffdfd;
+    color: #710d02;
+}
+
+
+#main {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+
+/* UPLOAD FILES */
+#upload label {
+    text-align: center;
+    margin: auto;
+    padding-top: 2em;
+    font-size: 1em;
+    border-bottom: solid 1px #710d02;
+    cursor: pointer;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+
+/* ACTUAL FILE INPUT */
+input[type=file] {
+    display: none;
+}
+
+
+/* PDF ANONYMIZER */
+h1 {
+    font-size: max(5vw, 2em);
+    font-weight: lighter;
+    line-height: 1em;
+}
+
+
+#hidden {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 65%;
+    left: 50%;
+    display: none;
+    text-align: center;
+}
+
+
+/* PROCESS FILE */
+input[type=submit] {
+    animation: appear 0.5s;
+    padding: 0.6em;
+    border-radius: 1.2em;
+    font-size: 1em;
+    border: none;
+    background-color: #710d02;
+    color:#fffdfd;
+    font-weight: bold;
+    cursor: pointer;
+}

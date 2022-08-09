@@ -47,9 +47,8 @@ def index():
 
                 out = os.system(f"python script.py single sensitive-pdfs/{filename}")
 
-                # CHANGE BOTH DELAYS FOR DELETION
                 # Planning the file deletion in 5 min (= 300 s)
-                Timer(5, os.remove, ("anonymized-pdfs/" + filename,)).start()
+                Timer(300, os.remove, ("anonymized-pdfs/" + filename,)).start()
 
                 # Deleting original
                 os.remove("sensitive-pdfs/" + filename)
@@ -99,7 +98,7 @@ def index():
             # Planning the files deletion in 5 min (= 300 s)
             for dr in ("sensitive-pdfs/", "anonymized-pdfs/"):
                 try:
-                    Timer(10, shutil.rmtree, (dr + folder,)).start()
+                    Timer(300, shutil.rmtree, (dr + folder,)).start()
                 except:
                     print("Error when trying to delete", dr)
 

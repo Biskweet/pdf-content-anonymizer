@@ -62,14 +62,14 @@ def assign_aliases(data):
     aliases = dict()
 
     for category in data:
-        prefix = category[:3].upper()
+        prefix = category[:3].lower()
 
         for i, element in enumerate(data[category]):
             if category.upper() == "UNKNOWN WORDS":
                 prefix = '?'
 
             # Assigning a new unique alias to each element *if it isn't seen already*
-            aliases.setdefault(element, prefix + ('#' + hex(i)).rjust(len(element) - 10, '#'))
+            aliases.setdefault(element, prefix + '#' + hex(i))
 
     return aliases
 

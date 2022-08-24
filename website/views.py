@@ -1,7 +1,6 @@
 import os
 import shutil
 from threading import Timer
-import time
 import uuid
 import zipfile
 
@@ -10,7 +9,7 @@ from werkzeug.utils import secure_filename
 
 
 def file_is_pdf(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() == "pdf"
+    return '.' in filename and filename.rsplit('.', 1)[1].upper() == "PDF"
 
 
 app = Flask(__name__)
@@ -20,10 +19,10 @@ app.config.from_object("config")
 @app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        if "pdfsingle" not in request.files or "pdfmult" not in request.files:
+        if "pdfsingle" not in request.files and "pdfmult" not in request.files:
             return redirect(request.url)
 
-        # Either pdfsingle or pdfmult is in request.files, now ensured!
+        # We now ensured either pdfsingle or pdfmult is in request.files
 
         # Creating containing folders
         try: os.mkdir("sensitive-pdfs/")
